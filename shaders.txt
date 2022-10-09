@@ -1,0 +1,67 @@
+What is a Shader?
+
+-One of the main components of WebGL
+-Must learn at first if doing native WebGL
+-Program written in GLSL
+-Sent to the GPU
+-Position each vertex of a geometry
+-Colorize each visible of that geometry
+
+
+
+"Pixel" isn't accurate because each point in the render doesn't necessarily match each pixel of the screen
+
+We are going to use "fragment"
+
+We send a lot of data to the Shader
+-Verices coordinates
+-Mesh transformation
+-Information about the camera
+-Colors
+-Textures
+-Lights
+-Fog
+-Etc
+
+Position each vertex of the geometry
+
+
+-We create the vertex shader
+-We send the shader to the GPU with data like the vertices coordinates, the mesh transformation, camera Informations, etc.
+-The GPU follows the instructions and position the vertices on the render
+
+
+The same vertex shader will be used for every vertices 
+Some data like the vertex position will be different for each vertex
+Those type of data are called attributes
+
+Some data like the position of the mesh are the same for every vertices
+Those type of data are called uniforms
+
+Once the vertices are placed by the vertex shader, the GPU knows what pixels of the geometry are visible and can proceed to the fragment shader
+
+Color each visible pixe of the geometry
+
+The same fragment shader will be used for every visible fragment of the geometry
+
+- We create the fragment shader
+- We send the shader to the GPU with data like a Color
+- The gpu follows the instructions and color the fragments
+
+
+We can send uniforms (same value) to the fragment
+
+
+We can send a value from the vertex to the fragment
+
+Those are called varyings and the value get interpolated between the vertices
+
+
+WHY WRITING OUR OWN Shaders
+- Three.js materials are limited
+- Our shaders can be very simple and performant
+- We can add custom post-processing
+
+
+The shader language is called GLSL (OpenGL Shading Language)
+Close to the C Language
